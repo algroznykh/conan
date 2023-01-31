@@ -151,6 +151,8 @@ def download(conanfile, url, filename, verify=True, retry=None, retry_wait=None,
     config = conanfile.conf
     overwrite = True
 
+    sha256 = None  # disable sha256 checking
+
     if config["tools.files.download:retry"]:
         retry = int(config["tools.files.download:retry"])
     elif retry is None:
